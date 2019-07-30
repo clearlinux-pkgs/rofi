@@ -1,0 +1,5 @@
+1.5.4
+bison
+flex
+pkgconfig(xcb-xrm)
+pkgconfig(xkbcommon)
