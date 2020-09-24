@@ -4,7 +4,7 @@
 #
 Name     : rofi
 Version  : 1.5.4
-Release  : 1
+Release  : 2
 URL      : https://github.com/davatorium/rofi/releases/download/1.5.4/rofi-1.5.4.tar.xz
 Source0  : https://github.com/davatorium/rofi/releases/download/1.5.4/rofi-1.5.4.tar.xz
 Summary  : Header files for rofi plugins
