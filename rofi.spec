@@ -4,7 +4,7 @@
 #
 Name     : rofi
 Version  : 1.5.4
-Release  : 2
+Release  : 3
 URL      : https://github.com/davatorium/rofi/releases/download/1.5.4/rofi-1.5.4.tar.xz
 Source0  : https://github.com/davatorium/rofi/releases/download/1.5.4/rofi-1.5.4.tar.xz
 Summary  : Header files for rofi plugins
@@ -89,20 +89,21 @@ man components for the rofi package.
 
 %prep
 %setup -q -n rofi-1.5.4
+cd %{_builddir}/rofi-1.5.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564525374
+export SOURCE_DATE_EPOCH=1605557300
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -112,13 +113,13 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check || :
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1564525374
+export SOURCE_DATE_EPOCH=1605557300
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/rofi
-cp COPYING %{buildroot}/usr/share/package-licenses/rofi/COPYING
+cp %{_builddir}/rofi-1.5.4/COPYING %{buildroot}/usr/share/package-licenses/rofi/df90bf9056c2ae0ead76be9a747e95438dad6129
 %make_install
 
 %files
@@ -172,7 +173,7 @@ cp COPYING %{buildroot}/usr/share/package-licenses/rofi/COPYING
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/rofi/COPYING
+/usr/share/package-licenses/rofi/df90bf9056c2ae0ead76be9a747e95438dad6129
 
 %files man
 %defattr(0644,root,root,0755)
