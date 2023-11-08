@@ -1,5 +1,5 @@
-1.5.4
+1.7.5
 bison
 flex
-pkgconfig(xcb-xrm)
+pkgconfig(xcb-cursor)
 pkgconfig(xkbcommon)
