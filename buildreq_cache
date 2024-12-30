@@ -1,5 +1,4 @@
-1.7.5
+1.7.6
 bison
 flex
-pkgconfig(xcb-cursor)
-pkgconfig(xkbcommon)
+pandoc
